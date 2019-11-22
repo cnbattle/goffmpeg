@@ -6,18 +6,18 @@ type FFmpeg struct {
 	ffmpegCmd  string
 	ffprobeCmd string
 	ffplayCmd  string
-	FilePath   string
+	filePath   string
 }
 
 func (ffmpeg *FFmpeg) SetFilePath(filePath string) {
-	ffmpeg.FilePath = filePath
+	ffmpeg.filePath = filePath
 }
 
 func (ffmpeg *FFmpeg) GetFilePath() (string, error) {
-	if ffmpeg.FilePath == "" {
+	if ffmpeg.filePath == "" {
 		return "", errors.New("file path is empty")
 	}
-	return ffmpeg.FilePath, nil
+	return ffmpeg.filePath, nil
 }
 
 func (ffmpeg *FFmpeg) SetFFmpegCmd(cmd string) {
