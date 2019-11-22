@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// TestGetDuration
+// TestAddBackgroundMusic
 func TestAddBackgroundMusic(t *testing.T) {
 	testFileName := "./test/test_AddBackgroundMusic.mp4"
 	_, err := os.Stat(testFileName)
