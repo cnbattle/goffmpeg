@@ -15,7 +15,7 @@ func (ffmpeg *FFmpeg) GetDuration() (float64, error) {
 	buf := new(bytes.Buffer)
 	cmd.Stdout = buf
 	if err := cmd.Run(); err != nil {
-		return 0, errors.New(fmt.Sprintf("%s-%s-%s", "could not generate frame", err.Error(), buf.String()))
+		return 0, errors.New(fmt.Sprintf("%s: %s", "could not generate frame", err.Error()))
 	}
 	return strconv.ParseFloat(buf.String()[0:len(buf.String())-2], 64)
 }
