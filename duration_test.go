@@ -4,11 +4,12 @@ import (
 	"testing"
 )
 
+// TestGetDuration
 func TestGetDuration(t *testing.T) {
 	var testFFmpeg FFmpeg
 	testFFmpeg.FilePath = "./test/test.mp4"
 	duration, err := testFFmpeg.GetDuration()
-	if  err != nil {
+	if err != nil {
 		t.Fatal(err)
 	}
 	if duration != 8.545 {
