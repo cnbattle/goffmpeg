@@ -12,10 +12,8 @@ func TestAddBackgroundMusic(t *testing.T) {
 	if err == nil {
 		_ = os.Remove(testFileName)
 	}
-
-	var testFFmpeg FFmpeg
-	testFFmpeg.SetFilePath("./test/nosound.mp4")
-	err = testFFmpeg.AddBackgroundMusic("./test/demo.mp3", testFileName)
+	testMediaFile := MediaFile{FilePath: "./test/nosound.mp4"}
+	err = testMediaFile.AddBackgroundMusic("./test/demo.mp3", testFileName)
 	if err != nil {
 		t.Fatal(err)
 	}

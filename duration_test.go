@@ -6,9 +6,8 @@ import (
 
 // TestGetDuration
 func TestGetDuration(t *testing.T) {
-	var testFFmpeg FFmpeg
-	testFFmpeg.filePath = "./test/demo.mp4"
-	duration, err := testFFmpeg.GetDuration()
+	testMediaFile := MediaFile{FilePath: "./test/demo.mp4"}
+	duration, err := testMediaFile.GetDuration()
 	if err != nil {
 		t.Fatal(err)
 	}

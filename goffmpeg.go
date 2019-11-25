@@ -1,54 +1,52 @@
 package goffmpeg
 
-import "errors"
-
-type FFmpeg struct {
+// MediaFile 住结构体
+type MediaFile struct {
 	ffmpegCmd  string
 	ffprobeCmd string
 	ffplayCmd  string
-	filePath   string
+	// 处理文件的路径
+	FilePath string
 }
 
-func (ffmpeg *FFmpeg) SetFilePath(filePath string) {
-	ffmpeg.filePath = filePath
+// SetFFmpegCmd 设置FFmpeg命令
+func (model *MediaFile) SetFFmpegCmd(cmd string) *MediaFile {
+	model.ffmpegCmd = cmd
+	return model
 }
 
-func (ffmpeg *FFmpeg) GetFilePath() (string, error) {
-	if ffmpeg.filePath == "" {
-		return "", errors.New("file path is empty")
-	}
-	return ffmpeg.filePath, nil
-}
-
-func (ffmpeg *FFmpeg) SetFFmpegCmd(cmd string) {
-	ffmpeg.ffmpegCmd = cmd
-}
-
-func (ffmpeg *FFmpeg) GetFFmpegCmd() string {
-	if ffmpeg.ffmpegCmd == "" {
+// GetFFmpegCmd 获取FFmpeg命令
+func (model *MediaFile) GetFFmpegCmd() string {
+	if model.ffmpegCmd == "" {
 		return "ffmpeg"
 	}
-	return ffmpeg.ffmpegCmd
+	return model.ffmpegCmd
 }
 
-func (ffmpeg *FFmpeg) SetFFprobeCmd(cmd string) {
-	ffmpeg.ffprobeCmd = cmd
+// SetFFprobeCmd 设置FFprobe命令
+func (model *MediaFile) SetFFprobeCmd(cmd string) *MediaFile {
+	model.ffprobeCmd = cmd
+	return model
 }
 
-func (ffmpeg *FFmpeg) GetFFprobeCmd() string {
-	if ffmpeg.ffprobeCmd == "" {
+// GetFFprobeCmd 获取FFprobe命令
+func (model *MediaFile) GetFFprobeCmd() string {
+	if model.ffprobeCmd == "" {
 		return "ffprobe"
 	}
-	return ffmpeg.ffmpegCmd
+	return model.ffmpegCmd
 }
 
-func (ffmpeg *FFmpeg) SetFFplayCmd(cmd string) {
-	ffmpeg.ffplayCmd = cmd
+// SetFFplayCmd 设置FFplay命令
+func (model *MediaFile) SetFFplayCmd(cmd string) *MediaFile {
+	model.ffplayCmd = cmd
+	return model
 }
 
-func (ffmpeg *FFmpeg) GetFFplayCmd() string {
-	if ffmpeg.ffplayCmd == "" {
+// GetFFplayCmd 获取FFplay命令
+func (model *MediaFile) GetFFplayCmd() string {
+	if model.ffplayCmd == "" {
 		return "ffplay"
 	}
-	return ffmpeg.ffplayCmd
+	return model.ffplayCmd
 }

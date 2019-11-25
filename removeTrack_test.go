@@ -12,9 +12,8 @@ func TestRemoveTrack(t *testing.T) {
 	if err == nil {
 		_ = os.Remove(testFileName)
 	}
-	var testFFmpeg FFmpeg
-	testFFmpeg.filePath = "./test/demo.mp4"
-	err = testFFmpeg.RemoveTrack(testFileName)
+	testMediaFile := MediaFile{FilePath: "./test/demo.mp4"}
+	err = testMediaFile.RemoveTrack(testFileName)
 	if err != nil {
 		t.Fatal(err)
 	}
