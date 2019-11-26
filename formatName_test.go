@@ -7,7 +7,7 @@ import (
 
 // TestGetFormatName
 func TestGetFormatName(t *testing.T) {
-	testMediaFile := MediaFile{FilePath: "./test/demo.mp4"}
+	testMediaFile := MediaFile{FilePath: "./testdata/demo.mp4"}
 	formatName, err := testMediaFile.GetFormatName()
 	if err != nil {
 		t.Fatal(err)

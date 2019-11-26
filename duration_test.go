@@ -6,7 +6,7 @@ import (
 
 // TestGetDuration
 func TestGetDuration(t *testing.T) {
-	testMediaFile := MediaFile{FilePath: "./test/demo.mp4"}
+	testMediaFile := MediaFile{FilePath: "./testdata/demo.mp4"}
 	duration, err := testMediaFile.GetDuration()
 	if err != nil {
 		t.Fatal(err)
