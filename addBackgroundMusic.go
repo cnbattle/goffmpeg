@@ -22,7 +22,7 @@ func (model *MediaFile) AddBackgroundMusic(backgroundMusicFile, saveVideoFile st
 	if videoLen > mp3Len {
 		return errors.New("视频长度大于音频")
 	}
-	cmd := exec.Command(model.GetFFmpegCmd(), "-i", model.FilePath, "-i", backgroundMusicFile, "-shortest", saveVideoFile)
+	cmd := exec.Command(model.GetFFmpegCmd(), "-i", model.FilePath, "-i", backgroundMusicFile, "-codec", "copy", "-shortest", saveVideoFile)
 	buf := new(bytes.Buffer)
 	cmd.Stdout = buf
 	if err := cmd.Run(); err != nil {
